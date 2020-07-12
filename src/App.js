@@ -6,6 +6,8 @@ function App() {
   return (
     <div>
       <Dashboard></Dashboard>
+      <Login />
+      <Error />
     </div>
   );
 }
