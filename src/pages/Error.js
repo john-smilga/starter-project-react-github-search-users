@@ -2,8 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 const Error = () => {
-  return <h2>error page</h2>;
+  return( 
+    <Wrapper>
+      <div>
+        <h1>404</h1>
+        <h3>The page you tried cannot be found</h3>
+        <Link to='/' className='btn'>Back</Link>
+      </div>
+    </Wrapper>
+  );
 };
+
+
 const Wrapper = styled.section`
   min-height: 100vh;
   display: grid;

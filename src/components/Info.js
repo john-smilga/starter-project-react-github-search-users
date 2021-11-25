@@ -4,9 +4,40 @@ import styled from 'styled-components';
 import { GoRepo, GoGist } from 'react-icons/go';
 import { FiUsers, FiUserPlus } from 'react-icons/fi';
 
+// this object will manage all informational cards
+
 const UserInfo = () => {
-  return <h2>user info component</h2>;
+  const {githubUser} = React.useContext(GithubContext);
+  const {following, public_gists, new_contracts , tas_contracts} = githubUser;
+
+
+  const items = [
+    {id:1, icon:<GoRepo className='icon' />, label:'Following', value: following, color:'pink' },
+    {id:2, icon:<FiUsers className='icon' />, label:'GISTs', value: public_gists, color:'green' },
+    {id:3, icon:<FiUserPlus className='icon' />, label:'New', value: new_contracts, color:'purple' },
+    {id:4, icon:<GoGist className='icon' />, label:'TAS', value: tas_contracts, color:'yellow' },
+
+  ]
+
+  return (<section className='section'>
+      <Wrapper className='section-center'>
+          {items.map((item)=>{
+            return <Item key={item.id} {...item}> </Item>
+          })}
+      </Wrapper>
+  </section>
+  );
 };
+
+const Item = ({icon, label, value, color}) => {
+    return <article className='item'>
+        <span className={color}>{icon}</span>
+        <div>
+          <h3>{value}</h3>
+          <p>{label}</p>
+        </div>
+    </article>
+}
 
 const Wrapper = styled.section`
   display: grid;
