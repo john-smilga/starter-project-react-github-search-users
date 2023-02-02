@@ -7,12 +7,11 @@ const Dashboard = () => {
   const { setGithubUser } = useContext(GithubContext);
   return (
     <main>
-      <Navbar />
-      <Search />
+      {/* <Navbar />
+      <Search /> */}
       <Info />
       <User />
       <Repos />
-      <button onClick={() => setGithubUser("dion")}>Change user to Dion</button>
     </main>
   );
 };
