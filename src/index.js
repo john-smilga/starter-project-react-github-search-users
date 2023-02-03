@@ -8,11 +8,9 @@ import { Auth0Provider } from "@auth0/auth0-react";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <React.StrictMode>
-    <GithubProvider>
-      <App />
-    </GithubProvider>
-  </React.StrictMode>
+  <GithubProvider>
+    <App />
+  </GithubProvider>
 );
 
 // If you want your app to work offline and load faster, you can change
